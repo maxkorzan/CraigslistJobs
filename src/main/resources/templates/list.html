@@ -36,17 +36,17 @@
                         <p th:inline="text"><strong>[[${job.title}]]</strong></p>
                         <p th:inline="text" style="font-style: italic">[[${job.author}]]</p>
                         <hr class="text-muted">
-                        <p th:inline="text">[[${job.description}]]</p>
+                        <p th:inline="text">Description: [[${job.description}]]</p>
                         <p th:inline="text">Posted: [[${job.postedDate}]]</p>
                         <p th:inline="text">Phone: [[${job.phone}]]</p>
-                        <a th:href="${job.url}" th:inline="text">[[${job.url}]]</a>
+                        <a th:href="@{|http://${job.url}|}" th:inline="text">[[${job.url}]]</a>
                         <br>
                         <br>
                         <br>
                         <div style="float: right; opacity: 50%">
                         <a th:href="@{/update/{id} (id=${job.id})}">Update</a> &nbsp;
-                        <a th:href="@{/delete/{id} (id=${job.id})}">Delete</a>
-<!--                        <a th:href="@{/detail/{id} (id=${job.id})}">View</a>-->
+                        <a th:href="@{/delete/{id} (id=${job.id})}">Delete</a> &nbsp;
+                        <a th:href="@{/detail/{id} (id=${job.id})}">View</a>
                         </div>
                     </div>
                 </div>

@@ -16,46 +16,29 @@
 <!-- Navigation -->
 <div class="navigation" th:fragment="navbar">
 
-<!--<nav class="navbar navbar-light">-->
-<!--    <div class="container-fluid">-->
-<!--        <div class="navbar-header">-->
-<!--            <a class="navbar-brand" href="#">CL Jobs</a>-->
-<!--        </div>-->
-<!--        <ul class="nav navbar-nav">-->
-<!--            <li class="active"><a href="/">Home</a></li>-->
-<!--            <li><a href="/add">Post</a></li>-->
-<!--            <li><a href="/list">Listings</a></li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</nav>-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: rgba(245,245,245,1)">
+        <div class="container">
+            <a class="navbar-brand" href="/">CL Jobs</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"> Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/add"> Post </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/list"> Listings </a>
+                    </li>
 
-
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: rgba(245,245,245,1)">
-    <div class="container">
-        <a class="navbar-brand" href="/">CL Jobs</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/"> Home </a>
-                </li>
-<!--                <li class="nav-item">-->
-<!--                    <a href="/" class="btn btn-outline-secondary">Home</a>-->
-<!--                </li>-->
-                <li class="nav-item">
-                    <a class="nav-link" href="/add"> Post </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/list"> Listings </a>
-                </li>
-
-            </ul>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 </div>
 
@@ -63,17 +46,17 @@
 <!--Title Banner-->
 <div class="titlebanner" th:fragment="title">
 
-<div class="jumbotron jumbotron-fluid" style="background-color: rgba(245,245,245,1)">
-    <div class="container">
-        <h1 class="display-4" style="text-align: center">Craigslist Jobs</h1>
-        <p class="lead text-muted" style="text-align: center; font-style: italic">Work is hard. Finding a job shouldn't be.</p>
+    <div class="jumbotron jumbotron-fluid" style="background-color: rgba(245,245,245,1)">
+        <div class="container">
+            <h1 class="display-4" style="text-align: center">Craigslist Jobs</h1>
+            <p class="lead text-muted" style="text-align: center; font-style: italic">Work is hard. Finding a job shouldn't be.</p>
+        </div>
     </div>
-</div>
 
 </div>
 
 
-<!--footer template-->
+<!--Footer-->
 <div class="footer" th:fragment="footer">
 
     <footer class="footer">

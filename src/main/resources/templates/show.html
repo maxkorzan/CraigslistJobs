@@ -11,29 +11,35 @@
     </style>
 
 </head>
-<body style="text-align: center">
+<body>
 <div th:replace="base :: navbar"></div>
 <div th:replace="base :: title"></div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="container">
 
-<a href="/add">
-    <h1 class="display-3">ADD A JOB POST</h1>
-</a>
-<br>
-<br>
+    <h1 th:inline="text" class="display-4" style="text-align: center" ><strong>[[${job.title}]]</strong></h1>
+    <hr class="mt-2 mb-5">
 
-<a href="/list">
-    <h1 class="display-3">VIEW LISTINGS</h1>
-</a>
+    <div class="row">
+<!--        <div class="col-4" ></div>-->
+        <div class="col" >
+            <p th:inline="text"><strong>Posted By: </strong><br>[[${job.author}]]</p>
+            <p th:inline="text"><strong>Description: </strong><br>[[${job.description}]]</p>
+            <p th:inline="text"><strong>Date: </strong>[[${job.postedDate}]]</p>
+            <p th:inline="text"><strong>Phone: </strong>[[${job.phone}]]</p>
+            <span class="text-muted" style="font-style: italic">Learn more: </span><br>
+            <a th:href="@{|http://${job.url}|}" th:inline="text">[[${job.url}]]</a> <!--<span style="font-style: italic"><strong>learn more: </strong></span> <br>-->
+        </div>
+<!--        <div class="col-4" ></div>-->
+    </div>
 
 
 
+</div>
+
+
+
+<div class="container" style="height: 70px"></div>
 <div th:replace="base :: footer"></div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
