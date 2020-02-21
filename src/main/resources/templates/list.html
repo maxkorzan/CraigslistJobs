@@ -15,9 +15,11 @@
 <div th:replace="base :: navbar"></div>
 <div th:replace="base :: title"></div>
 
-<h2 class="display-4" style="text-align: center"><strong>LISTINGS</strong></h2>
-
 <div class="container">
+
+    <h1 class="display-4" style="text-align: center"><strong>LISTINGS</strong></h1>
+    <hr>
+
     <div class="row">
         <hr class="mt-2 mb-5">
 
@@ -25,7 +27,7 @@
 
             <div th:each="job : ${jobs}" class="col-lg-3 col-md-4 col-6">
 
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem; height: 377px">
 <!--                    <img class="card-img-top" src="" style="height: 150px" alt="">-->
 <!--                    <div class="card-img-top">-->
 <!--                        <p th:inline="text"><strong>[[${job.title}]]</strong></p>-->
@@ -34,17 +36,18 @@
                         <p th:inline="text"><strong>[[${job.title}]]</strong></p>
                         <p th:inline="text" style="font-style: italic">[[${job.author}]]</p>
                         <hr class="text-muted">
-                        <p th:inline="text">Description: [[${job.description}]]</p>
+                        <p th:inline="text">[[${job.description}]]</p>
                         <p th:inline="text">Posted: [[${job.postedDate}]]</p>
                         <p th:inline="text">Phone: [[${job.phone}]]</p>
                         <a th:href="${job.url}" th:inline="text">[[${job.url}]]</a>
-
                         <br>
                         <br>
                         <br>
-                        <a style="text-align: right" th:href="@{/update/{id} (id=${job.id})}">Update</a>
-                        <a style="text-align: right" th:href="@{/delete/{id} (id=${job.id})}">Delete</a>
+                        <div style="float: right; opacity: 50%">
+                        <a th:href="@{/update/{id} (id=${job.id})}">Update</a> &nbsp;
+                        <a th:href="@{/delete/{id} (id=${job.id})}">Delete</a>
 <!--                        <a th:href="@{/detail/{id} (id=${job.id})}">View</a>-->
+                        </div>
                     </div>
                 </div>
             </div>
