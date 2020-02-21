@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <style>
+        /** { border: 1px solid red !important; }*/
+    </style>
+
+</head>
+<body>
+<div th:replace="base :: navbar"></div>
+<div th:replace="base :: title"></div>
+
+<h2 class="display-4" style="text-align: center"><strong>LISTINGS</strong></h2>
+
+<div class="container">
+    <div class="row">
+        <hr class="mt-2 mb-5">
+
+        <div class="row text-center text-lg-left">
+
+            <div th:each="job : ${jobs}" class="col-lg-3 col-md-4 col-6">
+
+                <div class="card" style="width: 18rem;">
+<!--                    <img class="card-img-top" src="" style="height: 150px" alt="">-->
+<!--                    <div class="card-img-top">-->
+<!--                        <p th:inline="text"><strong>[[${job.title}]]</strong></p>-->
+<!--                    </div>-->
+                    <div class="card-body">
+                        <p th:inline="text"><strong>[[${job.title}]]</strong></p>
+                        <p th:inline="text" style="font-style: italic">[[${job.author}]]</p>
+                        <hr class="text-muted">
+                        <p th:inline="text">Description: [[${job.description}]]</p>
+                        <p th:inline="text">Posted: [[${job.postedDate}]]</p>
+                        <p th:inline="text">Phone: [[${job.phone}]]</p>
+                        <a th:href="${job.url}" th:inline="text">[[${job.url}]]</a>
+
+                        <br>
+                        <br>
+                        <br>
+                        <a style="text-align: right" th:href="@{/update/{id} (id=${job.id})}">Update</a>
+                        <a style="text-align: right" th:href="@{/delete/{id} (id=${job.id})}">Delete</a>
+<!--                        <a th:href="@{/detail/{id} (id=${job.id})}">View</a>-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container" style="height: 70px"></div>
+<div th:replace="base :: footer"></div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
